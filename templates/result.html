@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Fit Score: {{score}}%</h1>
+
+    <div class="card">
+        <h2>Strengths</h2>
+        {% for skill in matched %}
+        <span class="tag green">{{skill}}</span>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h2>Skill Gaps</h2>
+        {% for skill in missing %}
+        <span class="tag red">{{skill}}</span>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h2>Suggestions</h2>
+        <ul>
+        {% for s in suggestions %}
+            <li>{{s}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/">Go Back</a>
+
+</div>
+
+</body>
+</html>
