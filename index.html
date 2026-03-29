@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 AI-Powered Smart Study Planner 🎯</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+  <span class="emoji">📚</span> AI-Powered Smart Study Planner <span class="emoji">🎯</span>
+    </h1>
+    <!-- Dark/Light slider -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="themeToggle">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider round"></span>
+      </label>
+      <em>Dark Mode</em>
+    </div>
+
+    <!-- Input Form -->
+    <form id="plannerForm">
+      <label>Subjects & Topics (format: Subject: Topic1|Topic2, ...)</label>
+      <textarea id="subjectTopics" placeholder="Math: Algebra|Calculus, Physics: Mechanics|Optics" required></textarea>
+
+      <label>Available hours per day:</label>
+      <input type="number" id="hours" placeholder="5" required>
+
+      <label>Priority per Subject (1-5, 5 = hardest):</label>
+      <input type="text" id="priority" placeholder="3,5" required>
+
+      <label>Algorithm Mode:</label>
+      <select id="algoMode">
+        <option value="none">No Algorithm</option>
+        <option value="dfs">DFS</option>
+        <option value="bfs">BFS</option>
+      </select>
+
+      <label>Dependencies (optional, format: Topic:Dep1|Dep2,...)</label>
+      <input type="text" id="dependencies" placeholder="Calculus: Algebra, Optics: Mechanics">
+
+      <button type="submit">Generate Plan 🚀</button>
+    </form>
+
+    <h2>Your Study Plan:</h2>
+    <div id="schedule"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
